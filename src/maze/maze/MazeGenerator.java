@@ -4,13 +4,13 @@ import maze.util.RandomizedSet;
 
 import java.util.*;
 
+import static maze.maze.MazeElement.PASS;
+import static maze.maze.MazeElement.WALL;
+
 public class MazeGenerator {
     private final int height;
     private final int width;
     private int[][] maze;
-
-    private static final int WALL = 0;
-    private static final int PASS = 1;
 
     public MazeGenerator(int height, int width) {
         this.height = height;
@@ -97,7 +97,7 @@ public class MazeGenerator {
     private void addExits() {
         maze[0][1] = PASS;
         for (int i = height - 1; i >= 0; i--) {
-            if (maze[i][width - 2] == 1) {
+            if (maze[i][width - 2] == PASS) {
                 maze[i][width - 1] = PASS;
                 return;
             }

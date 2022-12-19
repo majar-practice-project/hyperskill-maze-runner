@@ -2,6 +2,7 @@ package maze;
 
 import maze.maze.MazeGenerator;
 import maze.maze.MazePersistence;
+import maze.maze.MazeSolver;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -10,6 +11,7 @@ import java.util.NoSuchElementException;
 public class Controller {
     private final CommandView view = new CommandView();
     private final MazePersistence storage = new MazePersistence();
+    private final MazeSolver solver = new MazeSolver();
     private int[][] maze;
     private boolean mazePresent;
 
@@ -55,6 +57,9 @@ public class Controller {
                 break;
             case 4:
                 view.showMaze(maze);
+                break;
+            case 5:
+                view.showMaze(solver.solve(maze));
         }
     }
 

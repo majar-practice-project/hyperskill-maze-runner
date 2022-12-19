@@ -37,8 +37,9 @@ public class CommandView {
                 "2. Load a maze\n" +
                 "3. Save the maze\n" +
                 "4. Display the maze\n" +
+                "5. Find the escape\n" +
                 "0. Exit");
-        return getInputFromRange(5);
+        return getInputFromRange(6);
     }
 
     public int[] getMazeSize(){
